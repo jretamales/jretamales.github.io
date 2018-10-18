@@ -686,7 +686,7 @@ figure[class$="highlight"] > pre, td.code pre {
   background-position: 0px 10px;
   border-left: 7px solid #444;
 }
-div[class$="highlight-rouge"] pre.highlight {
+div[class$="highlight-rouge"] div.highlight pre.highlight {
   background-color: #FAFAFA;
   background-size: 3em 3em;
   background-position: 0px 10px;
