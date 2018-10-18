@@ -704,6 +704,7 @@ td.gutter pre {
   padding: 2.5px;
 }
 .highlight > pre.highlight {
+  margin-left: 30px;
   padding: 9.5px;
 }
 td.code pre {
