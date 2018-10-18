@@ -14,21 +14,17 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: My website
+title: Jorge Retamales
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: Mi Blog de Machine Learning/Python/Data Science
 
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-    - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
+  Blog "blog"
+  CV: "http://deanattali.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -64,7 +60,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Jorge Retamales
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
@@ -72,13 +68,13 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "someone@example.com"
-  facebook: daattali
-  github: daattali
-  twitter: daattali
+  email: "jorge.retamales@outlook.com"
+#  facebook: ""
+# github: ""
+#  twitter: "https://www.linkedin.com/in/retamj/"
 #  reddit: yourname
 #  google-plus: +DeanAttali
-#  linkedin: daattali
+  linkedin: "https://www.linkedin.com/in/retamj/"
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -92,8 +88,8 @@ social-network-links:
 
 # Select which share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
+  twitter: false
+  facebook: false
   google: false
   linkedin: true
 
@@ -145,7 +141,7 @@ title-separator: "-"
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Vancouver"
+timezone: "America/Santiago"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
