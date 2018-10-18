@@ -697,7 +697,7 @@ td.gutter pre {
   background-color: #fff;
 }
 .highlight > pre {
-  padding: 5;
+  padding: 2.5px;
 }
 .highlight > pre.highlight {
   padding: 9.5px;
