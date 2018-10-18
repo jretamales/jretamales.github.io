@@ -678,7 +678,7 @@ pre {
 pre code {
   white-space: pre;
 }
-div[class$="highlight"] pre.highlight, div[class$="highlight"] .highlight > pre, td.code pre {
+figure[class$="highlight"] > pre, td.code pre {
   background-color: #FAFAFA;
   background-image: linear-gradient(#F9F9F9 50%, #FDFDFD 50%);
   background-repeat: repeat;
