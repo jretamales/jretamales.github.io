@@ -1,9 +1,10 @@
 ---
 layout: post
 mathjax: true
-title: Titulo
-date: 2018-10-18 16:22 +0000
+title: Preprocesamiento-entendimiento2
+date: 2018-10-18 16:38 +0000
 categories: data
+comments: true
 ---
  
 ***Spoiler alert 1***: Esta es la segunda parte del post de
