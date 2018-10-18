@@ -653,12 +653,14 @@ table tr th {
   text-align: left;
   margin: 0;
   padding: 6px 13px;
+  font-size: 16px;
 }
 table tr td {
   border: 1px solid #cccccc;
   text-align: left;
   margin: 0;
   padding: 6px 13px;
+  font-size: 10px;
 }
 table tr th :first-child,
 table tr td :first-child {
@@ -678,6 +680,8 @@ pre {
 pre code {
   white-space: pre;
 }
+
+/* Proximas dos selecciones es para cambiar los boxes de in out de python*/
 figure[class$="highlight"] > pre, td.code pre {
   background-color: #FAFAFA;
   background-size: 3em 3em;
