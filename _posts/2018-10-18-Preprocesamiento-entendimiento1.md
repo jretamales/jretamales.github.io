@@ -2,7 +2,7 @@
 layout: post
 mathjax: true
 title: Preprocesamiento-entendimiento1
-date: 2018-10-18 16:38 +0000
+date: 2018-10-18 20:15 +0000
 categories: data
 comments: true
 ---

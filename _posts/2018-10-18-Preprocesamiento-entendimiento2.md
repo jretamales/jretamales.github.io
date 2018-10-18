@@ -2,7 +2,7 @@
 layout: post
 mathjax: true
 title: Preprocesamiento-entendimiento2
-date: 2018-10-18 16:38 +0000
+date: 2018-10-18 20:21 +0000
 categories: data
 comments: true
 ---
@@ -27,7 +27,6 @@ en-cualquier-proyecto-de-data-science/).
 * Limpieza
 * Visualización 
 
-**In [103]:**
 
 {% highlight python %}
 import numpy as np # para operaciones númericas/matrices
@@ -43,7 +42,6 @@ import os #para funcionalidades relacionadas al sistema operativo (carpetas)
  
 ### Carga 
 
-**In [104]:**
 
 {% highlight python %}
 ruta_datos = os.getcwd() + "\\datos\\"
@@ -66,7 +64,6 @@ len(autos_df_orig)
 
 
 
-**In [105]:**
 
 {% highlight python %}
 autos_df_orig.head(5)
@@ -259,7 +256,6 @@ de sus 5 primeras líneas.
  
 ### Limpieza 
 
-**In [106]:**
 
 {% highlight python %}
 cols_rl = [ 'price', 'horsepower', 'num_of_doors', 'body_style', 'length', 'width', 
@@ -293,7 +289,6 @@ columnas que contienen el caractér `?`. Indicando, para cada columna, si en
 algunas de sus filas contiene `?`.
 Finalmente, mostramos esa serie en pantalla. 
 
-**In [107]:**
 
 {% highlight python %}
 autos_df = autos_df_orig[(autos_df_orig.horsepower != '?') & 
@@ -327,7 +322,6 @@ transformaremos los datos, de variables que tienen naturaleza numérica como
 número de puertas y número de cilindros, pero por alguna razón están codificados
 como texto. 
 
-**In [108]:**
 
 {% highlight python %}
 autos_df['num_puertas'] = autos_df['num_of_doors'].replace(
@@ -357,7 +351,6 @@ donde aplicamos la función de conversión to_numeric para quede el data type
 adecuado. Acá utilizamos el parámetro `ignore`, que nos devuelve el mismo input
 si este no se puede convertir. 
 
-**In [109]:**
 
 {% highlight python %}
 autos_df['body_style'].value_counts()
@@ -375,7 +368,6 @@ autos_df['body_style'].value_counts()
 
 
 
-**In [110]:**
 
 {% highlight python %}
 chasis_codif = pd.get_dummies(autos_df['body_style'])
@@ -392,7 +384,6 @@ en caso contrario. Esto `pandas` lo realiza de forma simple con el comando
 `get_dummies` como se muestra en la última linea, devolviéndonos un dataframe,
 la cual la guardamos en la variable `chasis_codif`. 
 
-**In [111]:**
 
 {% highlight python %}
 autos_df = pd.concat([autos_df, chasis_codif], axis = 1)
@@ -461,7 +452,6 @@ mayor precio que los otros.
  
 ### Métricas de tendencia central: 
 
-**In [112]:**
 
 {% highlight python %}
 autos_df[cols_num].describe()
@@ -602,7 +592,6 @@ parecer se comportan de una forma más parecida a una normal.
  
 ### Correlación de Pearson: 
 
-**In [113]:**
 
 {% highlight python %}
 autos_df[cols_num].corr().loc['price', cols_num[1:]]
@@ -633,7 +622,6 @@ Tomando un paso más, veamos si visualmente estas relaciones son evidentes.
  
 ### Visualización 
 
-**In [114]:**
 
 {% highlight python %}
 from pandas.plotting import scatter_matrix
@@ -665,7 +653,6 @@ hallazgo entonces, nos abre una puerta. Que tal si en vez de mirar una relación
 del tipo $y = x$, transformamos x para que investigar $y = x^2$? Esto lo
 dejaremos, quizás para un próximo post. 
 
-**In [132]:**
 
 {% highlight python %}
 ax = autos_df[['price', 'body_style']].boxplot( by = 'body_style')
@@ -678,7 +665,6 @@ _= ax.set_ylabel('Price')
 ![png](/assets/images/2018-10-18-Preprocesamiento-entendimiento2_33_0.png)
 
 
-**In [131]:**
 
 {% highlight python %}
 ax = autos_df[['price', 'num_puertas']].boxplot( by = 'num_puertas')
