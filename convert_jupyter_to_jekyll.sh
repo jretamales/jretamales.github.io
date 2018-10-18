@@ -43,7 +43,7 @@ fi
 sed -i '1s/^/---\n/' ./_posts/$filename.md 
 sed -i '1s/^/categories: data\n/' ./_posts/$filename.md  
 sed -i '1s/^/date: '"$(date +%Y-%m-%d) $(date +%H:%M) +0000"'\n/' ./_posts/$filename.md 
-sed -i '1s/^/title: Titulo/' ./_posts/$filename.md 
+sed -i '1s/^/title: Titulo\n/' ./_posts/$filename.md 
 sed -i '1s/^/mathjax: true\n/' ./_posts/$filename.md 
 sed -i '1s/^/layout: post\n/' ./_posts/$filename.md 
 sed -i '1s/^/---\n/' ./_posts/$filename.md 

@@ -1,7 +1,8 @@
 ---
 layout: post
 mathjax: true
-title: Titulodate: 2018-10-18 16:13 +0000
+title: Titulo
+date: 2018-10-18 16:23 +0000
 categories: data
 ---
  
