@@ -700,6 +700,7 @@ td.gutter pre {
   padding: 0;
   border: none;
   background-color: #fff;
+  overflow: auto; 
 }
 .highlight > pre {
   padding: 2.5px;
