@@ -680,19 +680,13 @@ pre {
 pre code {
   white-space: pre;
 }
-
-/* Proximas dos selecciones es para cambiar los boxes de in out de python*/
-figure[class$="highlight"] > pre, td.code pre {
+div.highlight pre.highlight, .highlight > pre, td.code pre {
   background-color: #FAFAFA;
+  background-image: linear-gradient(#F9F9F9 50%, #FDFDFD 50%);
+  background-repeat: repeat;
   background-size: 3em 3em;
   background-position: 0px 10px;
   border-left: 7px solid #444;
-}
-div[class$="highlighter-rouge"] div.highlight pre.highlight {
-  background-color: #FAFAFA;
-  background-size: 3em 3em;
-  background-position: 0px 10px;
-  border-left: 7px solid #4286f4;
 }
 code table, code table td, code table th, code table tbody, code table tr,
 td.gutter pre {
