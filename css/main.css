@@ -657,7 +657,7 @@ table tr th {
 }
 table tr td {
   border: 1px solid #cccccc;
-  text-align: left;
+  text-align: right;
   margin: 0;
   padding: 6px 13px;
   font-size: 12px;

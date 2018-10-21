@@ -20,7 +20,7 @@ jupyter nbconvert ./_jupyter/"$*".ipynb --template my_jekyll.tpl --to markdown -
 
 # Move the images from the jupyter-generated folder to the images folder.
 echo "Moving images..."
-mv ./_posts/"$foldername"/* ./assets/images
+mv ./_posts/"$foldername"/* ./assets/images_files
 
 # Remove the now empty folder.
 rmdir ./_posts/"$foldername"
@@ -29,7 +29,7 @@ rmdir ./_posts/"$foldername"
 # NB: this sed command works on OSX, it might need to be tweaked for other platforms.
 echo "Rewriting image paths..."
 sed -i.tmp -e "s/""$filename""/\/assets\/images/" ./_posts/"$filename".md
-#sed -i.tmp -e ./assets/images/""$filename" ./_posts/"$filename".md
+#sed -i.tmp -e ./assets/images_files/""$filename" ./_posts/"$filename".md
 
 # Remove backup file created by sed command.
 rm ./_posts/"$filename".md.tmp
@@ -45,7 +45,7 @@ fi
 
 sed -i '1s/^/---\n/' ./_posts/"$filename".md 
 sed -i '1s/^/comments: true\n/' ./_posts/"$filename".md
-sed -i '1s/^/categories: data\n/' ./_posts/"$filename".md  
+sed -i '1s/^/tags: [data science]\n/' ./_posts/"$filename".md  
 sed -i '1s/^/date: '"$(date +%Y-%m-%d) $(date +%H:%M) +0000"'\n/' ./_posts/"$filename".md 
 sed -i '1s/^/title: '"$*"'\n/' ./_posts/"$filename".md 
 sed -i '1s/^/mathjax: true\n/' ./_posts/"$filename".md 
