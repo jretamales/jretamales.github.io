@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: Preprocesamiento-Entendimiento(2/2)
+title: Preprocesamiento-Entendimiento (2/2)
 date: 2018-10-21 13:04 +0000
 tags: [data science]
 comments: true
