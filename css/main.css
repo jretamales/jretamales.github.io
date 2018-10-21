@@ -637,7 +637,6 @@ footer .theme-by {
 
 table {
   padding: 0;
-  overflow: auto; 
 }
 table tr {
   border-top: 1px solid #cccccc;
@@ -671,7 +670,6 @@ table tr th :last-child,
 table tr td :last-child {
   margin-bottom: 0;
 }
-
 /* --- Code blocks --- */
 
 pre {

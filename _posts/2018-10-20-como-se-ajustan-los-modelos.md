@@ -906,3 +906,8 @@ modificaciones varias (pero importantes!) como momentum, minibatch y back
 propagation. Estos algoritmos son los que han logrado resultados estado del arte
 en áreas cómo reconocimiento de voz y clasificación de imágenes, y han empujado
 la revolución en inteligencia artificial que estamos viendo hoy. 
+
+<video width="800" height="400" controls>
+  <source src="/assets/videos/gradiente_descendente.mp4" type="video/mp4">
+</video>
+
