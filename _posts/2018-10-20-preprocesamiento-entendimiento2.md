@@ -2,7 +2,7 @@
 layout: post
 mathjax: true
 title: Preprocesamiento-entendimiento2
-date: 2018-10-18 20:21 +0000
+date: 2018-10-20 22:55 +0000
 categories: data
 comments: true
 ---
@@ -35,6 +35,7 @@ import pandas as pd # para tablas de datos
 #import matplotlib
 import matplotlib.pyplot as plt
 %matplotlib inline
+pd.options.display.float_format = '{:,.2f}'.format
 import os #para funcionalidades relacionadas al sistema operativo (carpetas)
 {% endhighlight %}
  
@@ -127,13 +128,13 @@ autos_df_orig.head(5)
       <td>convertible</td>
       <td>rwd</td>
       <td>front</td>
-      <td>88.6</td>
+      <td>88.60</td>
       <td>...</td>
       <td>130</td>
       <td>mpfi</td>
       <td>3.47</td>
       <td>2.68</td>
-      <td>9.0</td>
+      <td>9.00</td>
       <td>111</td>
       <td>5000</td>
       <td>21</td>
@@ -151,13 +152,13 @@ autos_df_orig.head(5)
       <td>convertible</td>
       <td>rwd</td>
       <td>front</td>
-      <td>88.6</td>
+      <td>88.60</td>
       <td>...</td>
       <td>130</td>
       <td>mpfi</td>
       <td>3.47</td>
       <td>2.68</td>
-      <td>9.0</td>
+      <td>9.00</td>
       <td>111</td>
       <td>5000</td>
       <td>21</td>
@@ -175,13 +176,13 @@ autos_df_orig.head(5)
       <td>hatchback</td>
       <td>rwd</td>
       <td>front</td>
-      <td>94.5</td>
+      <td>94.50</td>
       <td>...</td>
       <td>152</td>
       <td>mpfi</td>
       <td>2.68</td>
       <td>3.47</td>
-      <td>9.0</td>
+      <td>9.00</td>
       <td>154</td>
       <td>5000</td>
       <td>19</td>
@@ -199,13 +200,13 @@ autos_df_orig.head(5)
       <td>sedan</td>
       <td>fwd</td>
       <td>front</td>
-      <td>99.8</td>
+      <td>99.80</td>
       <td>...</td>
       <td>109</td>
       <td>mpfi</td>
       <td>3.19</td>
       <td>3.40</td>
-      <td>10.0</td>
+      <td>10.00</td>
       <td>102</td>
       <td>5500</td>
       <td>24</td>
@@ -223,13 +224,13 @@ autos_df_orig.head(5)
       <td>sedan</td>
       <td>4wd</td>
       <td>front</td>
-      <td>99.4</td>
+      <td>99.40</td>
       <td>...</td>
       <td>136</td>
       <td>mpfi</td>
       <td>3.19</td>
       <td>3.40</td>
-      <td>8.0</td>
+      <td>8.00</td>
       <td>115</td>
       <td>5500</td>
       <td>18</td>
@@ -491,91 +492,91 @@ autos_df[cols_num].describe()
   <tbody>
     <tr>
       <th>count</th>
-      <td>197.000000</td>
-      <td>197.000000</td>
-      <td>197.000000</td>
-      <td>197.000000</td>
-      <td>197.000000</td>
-      <td>197.000000</td>
-      <td>197.000000</td>
-      <td>197.000000</td>
+      <td>197.00</td>
+      <td>197.00</td>
+      <td>197.00</td>
+      <td>197.00</td>
+      <td>197.00</td>
+      <td>197.00</td>
+      <td>197.00</td>
+      <td>197.00</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>13279.644670</td>
-      <td>103.604061</td>
-      <td>3.137056</td>
-      <td>174.218274</td>
-      <td>65.889848</td>
-      <td>4.370558</td>
-      <td>126.994924</td>
-      <td>5118.020305</td>
+      <td>13,279.64</td>
+      <td>103.60</td>
+      <td>3.14</td>
+      <td>174.22</td>
+      <td>65.89</td>
+      <td>4.37</td>
+      <td>126.99</td>
+      <td>5,118.02</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>8010.334218</td>
-      <td>37.639205</td>
-      <td>0.993087</td>
-      <td>12.373547</td>
-      <td>2.116046</td>
-      <td>1.068924</td>
-      <td>41.913114</td>
-      <td>481.035914</td>
+      <td>8,010.33</td>
+      <td>37.64</td>
+      <td>0.99</td>
+      <td>12.37</td>
+      <td>2.12</td>
+      <td>1.07</td>
+      <td>41.91</td>
+      <td>481.04</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>5118.000000</td>
-      <td>48.000000</td>
-      <td>2.000000</td>
-      <td>141.100000</td>
-      <td>60.300000</td>
-      <td>2.000000</td>
-      <td>61.000000</td>
-      <td>4150.000000</td>
+      <td>5,118.00</td>
+      <td>48.00</td>
+      <td>2.00</td>
+      <td>141.10</td>
+      <td>60.30</td>
+      <td>2.00</td>
+      <td>61.00</td>
+      <td>4,150.00</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>7775.000000</td>
-      <td>70.000000</td>
-      <td>2.000000</td>
-      <td>166.800000</td>
-      <td>64.100000</td>
-      <td>4.000000</td>
-      <td>97.000000</td>
-      <td>4800.000000</td>
+      <td>7,775.00</td>
+      <td>70.00</td>
+      <td>2.00</td>
+      <td>166.80</td>
+      <td>64.10</td>
+      <td>4.00</td>
+      <td>97.00</td>
+      <td>4,800.00</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>10345.000000</td>
-      <td>95.000000</td>
-      <td>4.000000</td>
-      <td>173.200000</td>
-      <td>65.500000</td>
-      <td>4.000000</td>
-      <td>119.000000</td>
-      <td>5200.000000</td>
+      <td>10,345.00</td>
+      <td>95.00</td>
+      <td>4.00</td>
+      <td>173.20</td>
+      <td>65.50</td>
+      <td>4.00</td>
+      <td>119.00</td>
+      <td>5,200.00</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>16503.000000</td>
-      <td>116.000000</td>
-      <td>4.000000</td>
-      <td>183.500000</td>
-      <td>66.900000</td>
-      <td>4.000000</td>
-      <td>145.000000</td>
-      <td>5500.000000</td>
+      <td>16,503.00</td>
+      <td>116.00</td>
+      <td>4.00</td>
+      <td>183.50</td>
+      <td>66.90</td>
+      <td>4.00</td>
+      <td>145.00</td>
+      <td>5,500.00</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>45400.000000</td>
-      <td>262.000000</td>
-      <td>4.000000</td>
-      <td>208.100000</td>
-      <td>72.000000</td>
-      <td>12.000000</td>
-      <td>326.000000</td>
-      <td>6600.000000</td>
+      <td>45,400.00</td>
+      <td>262.00</td>
+      <td>4.00</td>
+      <td>208.10</td>
+      <td>72.00</td>
+      <td>12.00</td>
+      <td>326.00</td>
+      <td>6,600.00</td>
     </tr>
   </tbody>
 </table>
@@ -600,13 +601,13 @@ autos_df[cols_num].corr().loc['price', cols_num[1:]]
 
 
 
-    horsepower       0.811953
-    num_puertas      0.046571
-    length           0.694556
-    width            0.754249
-    num_cilindros    0.707885
-    engine_size      0.873708
-    peak_rpm        -0.101319
+    horsepower       0.81
+    num_puertas      0.05
+    length           0.69
+    width            0.75
+    num_cilindros    0.71
+    engine_size      0.87
+    peak_rpm        -0.10
     Name: price, dtype: float64
 
 
@@ -629,7 +630,7 @@ scatter_matrix(autos_df[cols_num], figsize=(10, 10));
 {% endhighlight %}
 
 
-![png](/assets/images/2018-10-18-Preprocesamiento-entendimiento2_31_0.png)
+![png](/assets/images_files/2018-10-20-preprocesamiento-entendimiento2_31_0.png)
 
  
 La primera línea de la celda anterior, es una simple importación de la función
@@ -662,7 +663,7 @@ _= ax.set_ylabel('Price')
 {% endhighlight %}
 
 
-![png](/assets/images/2018-10-18-Preprocesamiento-entendimiento2_33_0.png)
+![png](/assets/images_files/2018-10-20-preprocesamiento-entendimiento2_33_0.png)
 
 
 
@@ -674,7 +675,7 @@ _ = ax.set_ylabel('Price')
 {% endhighlight %}
 
 
-![png](/assets/images/2018-10-18-Preprocesamiento-entendimiento2_34_0.png)
+![png](/assets/images_files/2018-10-20-preprocesamiento-entendimiento2_34_0.png)
 
  
 Como análisis final, se utilizan un tipo de gráficos que tienen quizás, el mejor

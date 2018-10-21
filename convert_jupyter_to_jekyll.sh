@@ -20,15 +20,16 @@ jupyter nbconvert ./_jupyter/"$*".ipynb --template my_jekyll.tpl --to markdown -
 
 # Move the images from the jupyter-generated folder to the images folder.
 echo "Moving images..."
-mv ./_posts/"$filename"/* ./assets/images
+mv ./_posts/"$foldername"/* ./assets/images
 
 # Remove the now empty folder.
-rmdir ./_posts/"$filename"
+rmdir ./_posts/"$foldername"
 
 # Go through the markdown file and rewrite image paths.
 # NB: this sed command works on OSX, it might need to be tweaked for other platforms.
 echo "Rewriting image paths..."
-sed -i.tmp -e "s/""$filename""/\/assets\/images/g" ./_posts/"$filename".md
+sed -i.tmp -e "s/""$filename""/\/assets\/images/" ./_posts/"$filename".md
+#sed -i.tmp -e ./assets/images/""$filename" ./_posts/"$filename".md
 
 # Remove backup file created by sed command.
 rm ./_posts/"$filename".md.tmp
