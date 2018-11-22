@@ -177,8 +177,8 @@ Finalmente definimos nuestro objeto de Transformación de Dataset Customizada.
 {% highlight python %}
 class ModeImputer(TransformerMixin):
     
-    def __init__(self, char):
-        self.searched_char = char # Espeficamos el atributo con el que 
+    def __init__(self, missing_value = '?'):
+        self.missing_value = missing_value # Espeficamos el atributo con el que 
         # debe ser inicializado el objeto.
     
     def fit(self, X, y=None):
@@ -188,9 +188,9 @@ class ModeImputer(TransformerMixin):
         
         # primero buscamos las columnas que contengan 
         #el cáracter especificado.
-        cols = X.apply(lambda x: x.str.contains('\\' + self.searched_char).any())
+        cols = X.apply(lambda x: x.str.contains('\\' + self.missing_value).any())
         # luego reemplazamos las celdas con ese caracter con np.nan
-        df_tmp = X.loc[:,cols].replace({self.searched_char: np.nan})
+        df_tmp = X.loc[:,cols].replace({self.missing_value: np.nan})
         
         # finalmente, para esas columnas obtenemos la moda para cada una
         # esto lo guardamos en un diccionario dentro del mismo objeto
@@ -201,7 +201,7 @@ class ModeImputer(TransformerMixin):
     def transform(self, X):
         # Transform lo único que hace es tomar el diccionario computado y 
         # devolver el dataframe de vars independientes reemplazado.
-        replace_with = {k:{self.searched_char: v} for k, v in self.replace_with.items()}
+        replace_with = {k:{self.missing_value: v} for k, v in self.replace_with.items()}
         
         return X.replace(to_replace = replace_with)
 {% endhighlight %}
@@ -239,7 +239,7 @@ anterior.
 X_train, X_test, y_train, y_test = train_test_split(df[df.columns[:-1]],
                                                     df['price'] )
 # Nuestro objeto para imputar.
-mr = ModeImputer(char = '?')
+mr = ModeImputer(missing_value = '?')
 {% endhighlight %}
  
 Primero ajustamos a la data para obtener los parametros de reemplazo y luego
@@ -265,10 +265,8 @@ mr.replace_with
 
     {'norm_losses': '161',
      'num_of_doors': 'four',
-     'bore': '3.19',
-     'stroke': '3.15',
-     'horsepower': '68',
-     'peak_rpm': '5500'}
+     'bore': '3.62',
+     'stroke': '3.40'}
 
 
  
